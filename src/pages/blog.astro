@@ -10,10 +10,6 @@ const allPosts = await getCollection("blog");
   <h2>... and my new Astro Site</h2>
   <p>This is where I will post abount my journey learning Astro</p>
   <ul>
-    {
-     allPosts.map((post) => (
-      <BlogPost url=`{/posts/${post.id}/}` title={post.data.title} />
-     ))
-    }
+    {allPosts.map((post) => <BlogPost url={`/posts/${post.id}/`} title={post.data.title} />)}
   </ul>
 </BaseLayout>
